@@ -21,8 +21,11 @@ curl \
 fish \
 git \
 neovim \
+rxvt-unicode \
 vim \
 codium
+
+# Should set urxvt as default with fish
 
 echo "# Fetching Rust..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
