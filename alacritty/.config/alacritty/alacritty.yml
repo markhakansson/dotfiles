@@ -65,13 +65,33 @@ colors:
 # Background opacity
 background_opacity: 0.9
 
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+
+  # Number of lines the viewport will move for every line scrolled when
+  # scrollback is enabled (history > 0).
+  #multiplier: 3
+
+  # Scroll to the bottom when new text is written to the terminal.
+  #auto_scroll: false
+
+shell:
+  program: /bin/tmux
+
 key_bindings:
-  - { key: N,   mods: Control,       action: SpawnNewInstance  }
-  - { key: H,   mods: Alt,           chars: "\x02\x1b[D" }  # tmux: Left pane
-  - { key: L,   mods: Alt,           chars: "\x02\x1b[C" }  # tmux: Right pane
-  - { key: J,   mods: Alt,           chars: "\x02\x1b[B" }  # tmux: Lower pane
-  - { key: K,   mods: Alt,           chars: "\x02\x1b[A" }  # tmux: Upper pane
-  - { key: H,   mods: Shift|Alt,     chars: "\x02\x25" }  # tmux: Split vertical
-  - { key: J,   mods: Shift|Alt,     chars: "\x02\x22" }  # tmux: Split horizontal
-  - { key: X,   mods: Alt,           chars: "\x02\x78" }  # tmux: Close pane
-  - { key: X,   mods: Shift|Alt,     chars: "\x02\x78\x79" }  # tmux: Force close pane
+  - { key: N,     mods: Control,       action: SpawnNewInstance  }
+  - { key: H,     mods: Alt,           chars: "\x02\x1b[D" }  # tmux: Left pane
+  - { key: L,     mods: Alt,           chars: "\x02\x1b[C" }  # tmux: Right pane
+  - { key: J,     mods: Alt,           chars: "\x02\x1b[B" }  # tmux: Lower pane
+  - { key: K,     mods: Alt,           chars: "\x02\x1b[A" }  # tmux: Upper pane
+  - { key: H,     mods: Shift|Alt,     chars: "\x02\x25" }  # tmux: Split vertical
+  - { key: J,     mods: Shift|Alt,     chars: "\x02\x22" }  # tmux: Split horizontal
+  - { key: X,     mods: Alt,           chars: "\x02\x78" }  # tmux: Close pane
+  - { key: X,     mods: Shift|Alt,     chars: "\x02\x78\x79" }  # tmux: Force close pane
+  - { key: Up,    mods: Alt,           action: ScrollLineUp } 
+  - { key: Down,  mods: Alt,           action: ScrollLineDown }
+  - { key: Up,    mods: Shift|Alt,   action: ScrollPageUp }
+  - { key: Down,  mods: Shift|Alt,   action: ScrollPageDown }
+  - { key: F11,   action: ToggleFullscreen }
