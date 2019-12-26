@@ -75,4 +75,3 @@ key_bindings:
   - { key: J,   mods: Shift|Alt,     chars: "\x02\x22" }  # tmux: Split horizontal
   - { key: X,   mods: Alt,           chars: "\x02\x78" }  # tmux: Close pane
   - { key: X,   mods: Shift|Alt,     chars: "\x02\x78\x79" }  # tmux: Force close pane
-    

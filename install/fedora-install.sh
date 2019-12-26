@@ -5,7 +5,7 @@ echo "Fedora install script started."
 echo "You may need to enter your password multiple times."
 
 echo "# Updating system..."
-sudo dnf update
+sudo dnf update -y
 
 # Add GPG keys
 sudo rpm --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg 
@@ -17,15 +17,17 @@ printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vsco
 # Install most needed applications
 echo "# Installing applications..."
 sudo dnf install -y \
+alacritty \
+cava \
+codium \
 curl \
 fish \
 git \
 neovim \
 rxvt-unicode \
+stow \
+tmux \
 vim \
-codium
-
-# Should set urxvt as default with fish
 
 echo "# Fetching Rust..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
