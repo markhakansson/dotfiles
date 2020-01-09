@@ -77,8 +77,8 @@ scrolling:
   # Scroll to the bottom when new text is written to the terminal.
   #auto_scroll: false
 
-shell:
-  program: /bin/tmux
+#shell:
+#  program: /bin/tmux
 
 key_bindings:
   - { key: N,     mods: Control,       action: SpawnNewInstance  }
@@ -90,8 +90,8 @@ key_bindings:
   - { key: J,     mods: Shift|Alt,     chars: "\x02\x22" }  # tmux: Split horizontal
   - { key: X,     mods: Alt,           chars: "\x02\x78" }  # tmux: Close pane
   - { key: X,     mods: Shift|Alt,     chars: "\x02\x78\x79" }  # tmux: Force close pane
-  - { key: Up,    mods: Alt,           action: ScrollLineUp } 
-  - { key: Down,  mods: Alt,           action: ScrollLineDown }
+  - { key: Up,    mods: Control,           action: ScrollLineUp } 
+  - { key: Down,  mods: Control,           action: ScrollLineDown }
   - { key: Up,    mods: Shift|Alt,   action: ScrollPageUp }
   - { key: Down,  mods: Shift|Alt,   action: ScrollPageDown }
   - { key: F11,   action: ToggleFullscreen }
