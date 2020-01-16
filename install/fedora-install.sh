@@ -29,6 +29,14 @@ stow \
 tmux \
 vim \
 
+if [$XDG_CURRENT_DESKTOP == "GNOME"]
+then
+	sudo dnf install -y \
+	gnome-tweaks \
+	gnome-shell-extension \
+
+fi
+
 echo "# Fetching Rust..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
