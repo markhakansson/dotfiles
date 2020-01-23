@@ -14,3 +14,4 @@ end
 alias c='clear'
 alias l='ls'
 alias la='ls -a'
+alias search='fd'
