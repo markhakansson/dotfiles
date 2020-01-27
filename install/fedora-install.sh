@@ -20,6 +20,7 @@ sudo dnf copr enable pschyska/alacritty -y
 echo "# Installing applications..."
 sudo dnf install -y \
 alacritty \
+bat \
 cava \
 chsh \
 codium \
@@ -28,6 +29,7 @@ fd \
 fish \
 git \
 neovim \
+ripgrep \
 rxvt-unicode \
 stow \
 tmux \
