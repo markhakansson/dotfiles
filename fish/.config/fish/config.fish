@@ -1,5 +1,7 @@
-# Cargo path
+# Paths
 set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
+set -U fish_user_paths $HOME/bin $fish_user_paths
+
 
 # Env 
 set fish_greeting
