@@ -32,6 +32,7 @@ neovim \
 ripgrep \
 rxvt-unicode \
 stow \
+syncthing \
 tmux \
 vim \
 
