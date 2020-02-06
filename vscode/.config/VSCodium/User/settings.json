@@ -1,0 +1,6 @@
+{
+    "window.zoomLevel": -1,
+    "window.menuBarVisibility": "toggle",
+    "window.title": "${activeEditorShort}",
+    "workbench.startupEditor": "newUntitledFile"
+}
