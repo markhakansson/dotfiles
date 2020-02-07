@@ -28,6 +28,7 @@ curl \
 fd \
 fish \
 git \
+keepassxc \
 neovim \
 ripgrep \
 rxvt-unicode \
