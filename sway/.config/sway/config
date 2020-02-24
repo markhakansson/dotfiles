@@ -4,8 +4,24 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+### Visual settings
+#
+# Hide borders
+hide_edge_borders none
+    
 ## Keyboard
 input * xkb_layout "se"
+
+## Touchpad
+input "2:18:FocalTechPS/2_FocalTech_Touchpad" {
+    natural_scroll enabled
+    click_method clickfinger
+    pointer_accel 0.1
+    accel_profile adaptive
+}
+
+# Hide cursor
+seat * hide_cursor 5000
 
 ### Variables
 #
@@ -205,6 +221,7 @@ bar {
         background #323232
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
+    #status_command waybar
 }
 
 include /etc/sway/config.d/*
