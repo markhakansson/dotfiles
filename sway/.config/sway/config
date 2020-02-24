@@ -4,6 +4,9 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+## Keyboard
+input * xkb_layout "se"
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -21,7 +24,7 @@ set $menu ulauncher
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/wallhaven-969w3d.jpg fill
+output * bg ~/Pictures/Wallpapers/wallhaven-969w3d.jpg fill
 #
 # Example configuration:
 #
@@ -68,6 +71,16 @@ output * bg ~/Pictures/wallhaven-969w3d.jpg fill
 
     # exit sway (logs you out of your wayland session)
     bindsym $mod+Shift+e exit
+#
+# Function keys:
+#
+    # Brightnesss control
+    bindsym --locked XF86MonBrightnessDown exec light -U 5
+    bindsym --locked XF86MonBrightnessUp exec light -A 5
+    # Volume
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 #
 # Moving around:
 #
