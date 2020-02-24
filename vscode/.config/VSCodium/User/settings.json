@@ -2,5 +2,8 @@
     "window.zoomLevel": -1,
     "window.menuBarVisibility": "toggle",
     "window.title": "${activeEditorShort}",
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "rust-analyzer.serverPath": "rust-analyzer",
+    "terminal.integrated.shell.linux": "/usr/bin/fish",
+    "update.mode": "manual"
 }
