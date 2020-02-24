@@ -1,3 +1,4 @@
 tmux-server-*
 tmux-client-*
 .uuid
+.netrwhist
