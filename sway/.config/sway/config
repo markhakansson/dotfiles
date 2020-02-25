@@ -7,7 +7,7 @@
 ### Visual settings
 #
 # Hide borders
-hide_edge_borders none
+#hide_edge_borders none
     
 ## Keyboard
 input * xkb_layout "se"
@@ -37,6 +37,7 @@ set $term alacritty
 # Your preferred application launcher
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $launcher dmenu_path | fzf | xargs swaymsg exec
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -216,15 +217,10 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-    #status_command waybar
+    swaybar_command waybar
 }
 
+# Make launcher float
 for_window [title="^launcher$"] floating enable, border pixel
 
 include /etc/sway/config.d/*
