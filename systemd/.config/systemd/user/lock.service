@@ -1,0 +1,13 @@
+[Unit]
+Description=Lock the screen when suspending
+Before=sleep.target
+
+[Service]
+User=mark
+Environment=WAYLAND_DISPLAY=wayland-0
+Environtment=XDG_RUNTIME_DIR=/run/user/1000
+Type=forking
+ExecStart=/usr/bin/swaylock
+
+[Install]
+WantedBy=sleep.target
