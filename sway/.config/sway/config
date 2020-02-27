@@ -240,5 +240,6 @@ bar {
 for_window [title="^launcher$"] floating enable, border pixel
 
 exec "systemctl --user import-environment; systemctl --user start sway-session.target"
+exec systemctl import-environment SWAYSOCK
 
 include /etc/sway/config.d/*
