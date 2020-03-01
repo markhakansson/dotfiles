@@ -67,6 +67,7 @@ output * bg ~/Pictures/Wallpapers/wallhaven-969w3d.jpg fill
         click_method clickfinger
         pointer_accel 0.1
         accel_profile adaptive
+        dwt enabled
     }
 
 
@@ -109,8 +110,8 @@ output * bg ~/Pictures/Wallpapers/wallhaven-969w3d.jpg fill
 # Function keys:
 #
     # Brightnesss control
-    bindsym --locked XF86MonBrightnessDown exec light -U 5
-    bindsym --locked XF86MonBrightnessUp exec light -A 5
+    bindsym --locked XF86MonBrightnessDown exec light -U 5.00
+    bindsym --locked XF86MonBrightnessUp exec light -A 5.00
     # Volume
     # bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     # bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -244,5 +245,6 @@ for_window [title="^launcher$"] floating enable, border pixel
 
 exec "systemctl --user import-environment; systemctl --user start sway-session.target"
 exec systemctl import-environment SWAYSOCK
+exec mako
 
 include /etc/sway/config.d/*
