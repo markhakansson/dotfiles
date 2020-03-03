@@ -2,3 +2,4 @@ tmux-server-*
 tmux-client-*
 .uuid
 .netrwhist
+fish/.config/fish/fish_variables
