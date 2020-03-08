@@ -29,11 +29,15 @@ set $term alacritty
 set $launcher dmenu_path | fzf | xargs swaymsg exec
 # Lock
 set $lock swaylock
+# Wallpaper/background
+set $bg ~/Pictures/Wallpapers/wallhaven-969w3d.jpg
+# Spotify
+set $spotify flatpak run com.spotify.Client
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/Wallpapers/wallhaven-969w3d.jpg fill
+output * bg $bg fill
 #
 # Example configuration:
 #
@@ -101,11 +105,14 @@ output * bg ~/Pictures/Wallpapers/wallhaven-969w3d.jpg fill
     # lock sway
     bindsym $mod+Ctrl+l exec $lock
 
-    # suspend computer
-    bindsym $mod+Ctrl+s exec $lock && systemctl suspend
+    # hibernate computer
+    bindsym $mod+Ctrl+h exec $lock && systemctl suspend
 
     # power off
     bindsym $mod+Ctrl+p exec systemctl poweroff
+   
+    # start spotify
+    bindsym $mod+m exec $spotify
 #
 # Function keys:
 #
