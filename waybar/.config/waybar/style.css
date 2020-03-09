@@ -1,10 +1,12 @@
 * {
     border: none;
     border-radius: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
     font-family: Roboto, Helvetica, Arial, "Font Awesome 5 Free", monospace;
     font-size: 13px;
     min-height: 0;
+    box-shadow:    none;
+    text-shadow:   none;
+    transition-duration: 0s;
 }
 
 window#waybar {
@@ -28,11 +30,11 @@ window#waybar.solo {
 }
 */
 
-window#waybar.termite {
+window#waybar.alacritty {
     background-color: #3F3F3F;
 }
 
-window#waybar.chromium {
+window#waybar.firefox {
     background-color: #000000;
     border: none;
 }
