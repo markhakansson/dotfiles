@@ -12,6 +12,8 @@ default_border pixel 1
 # Hide cursor
 seat * hide_cursor 5000
 
+#gaps inner 8
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -111,8 +113,14 @@ output * bg $bg fill
     # reboot
     bindsym $mod+Ctrl+r exec systemctl reboot
 
+#
+# Applications:
+#
     # start spotify
     bindsym $mod+m exec $spotify
+    
+    bindsym $mod+F2 exec firefox
+    bindsym $mod+F3 exec codium
 #
 # Function keys:
 #
