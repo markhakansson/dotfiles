@@ -7,7 +7,6 @@
 ### Visual settings
 #
 # Hide borders
-#hide_edge_borders none
 default_border pixel 1 
 
 # Hide cursor
@@ -25,7 +24,6 @@ set $right l
 # Your preferred terminal emulator
 set $term alacritty 
 # Your preferred application launcher
-#set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $launcher dmenu_path | fzf | xargs swaymsg exec
 # Lock
 set $lock swaylock
@@ -86,7 +84,6 @@ output * bg $bg fill
     bindsym $mod+Shift+q kill
 
     # start your launcher
-    #bindsym $mod+d exec $menu
     bindsym $mod+d exec alacritty --dimensions 64 16 --title 'launcher' -e sh -c \'$launcher\'
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -110,7 +107,10 @@ output * bg $bg fill
 
     # power off
     bindsym $mod+Ctrl+p exec systemctl poweroff
-   
+    
+    # reboot
+    bindsym $mod+Ctrl+r exec systemctl reboot
+
     # start spotify
     bindsym $mod+m exec $spotify
 #
@@ -120,9 +120,6 @@ output * bg $bg fill
     bindsym --locked XF86MonBrightnessDown exec light -U 5.00
     bindsym --locked XF86MonBrightnessUp exec light -A 5.00
     # Volume
-    # bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    # bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    # bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
     bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -155,7 +152,7 @@ output * bg $bg fill
 #
     # switch to workspace
     bindsym $mod+1 workspace 1
-    bindsym $mod+2 workspace 2
+    bindsym $mod+2 workspace 2 
     bindsym $mod+3 workspace 3
     bindsym $mod+4 workspace 4
     bindsym $mod+5 workspace 5
@@ -166,7 +163,7 @@ output * bg $bg fill
     bindsym $mod+0 workspace 10
     # move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 1
-    bindsym $mod+Shift+2 move container to workspace 2
+    bindsym $mod+Shift+2 move container to workspace 2 
     bindsym $mod+Shift+3 move container to workspace 3
     bindsym $mod+Shift+4 move container to workspace 4
     bindsym $mod+Shift+5 move container to workspace 5
@@ -177,6 +174,11 @@ output * bg $bg fill
     bindsym $mod+Shift+0 move container to workspace 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+    # Assign applications to workspaces
+    assign [class="(?i)alacritty"] → 1 
+    assign [class="(?i)firefox"] → 2 
+    assign [class="(?i)vscodium"] → 3 
 #
 # Layout stuff:
 #
@@ -250,6 +252,7 @@ bar {
 # Make launcher float
 for_window [title="^launcher$"] floating enable, border pixel
 
+# Things to run when WM starts
 exec "systemctl --user import-environment; systemctl --user start sway-session.target"
 exec systemctl import-environment SWAYSOCK
 exec mako
