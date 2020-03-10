@@ -1,7 +1,8 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Roboto, Helvetica, Arial, "Font Awesome 5 Free", monospace;
+    /*font-family: Roboto, Helvetica, Arial, "Font Awesome 5 Free", monospace;*/
+    font-family: Source Code Pro, monospace, "Font Awesome 5 Free";
     font-size: 13px;
     min-height: 0;
     box-shadow:    none;
@@ -11,7 +12,6 @@
 
 window#waybar {
     background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
