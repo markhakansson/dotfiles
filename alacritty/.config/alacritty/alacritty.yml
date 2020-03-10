@@ -28,39 +28,77 @@ font:
   # Point size
   size: 11.0
 
+schemes:
+  breeze: &breeze 
+    primary:
+      background: '0x141c21'
+      foreground: '0xfcfcfc'
+    normal:
+      black: '0x232627'
+      red: '0xed1515'
+      green:   '0x009F6B'
+      yellow: '0xf67400'
+      blue: '0x1d99f3'
+      magenta: '0x9b59b6'
+      cyan: '0x1abc9c'
+      white: '0xfcfcfc'
+
+    # Bright colors
+    bright:
+      black: '0x7f8c8d'
+      red: '0xc0392b'
+      green:   '0x03C03C'
+      yellow: '0xfdbc4b'
+      blue: '0x3daee9'
+      magenta: '0x8e44ad'
+      cyan: '0x16a085'
+      white: '0xffffff'
+
+    # Dim colors
+    dim:
+      black: '0x31363b'
+      red: '0x783228'
+      green: '0x17a262'
+      yellow: '0xb65619'
+      blue: '0x1b668f'
+      magenta: '0x614a73'
+      cyan: '0x186c60'
+      white: '0x63686d'
+  
+  solarized: &solarized
+    # Default colors
+    primary:
+      background: '0x141c21'
+      #foreground: '0xa93a1a1'
+      foreground: '0xfcfcfc'
+    # Cursor colors
+    cursor:
+      text: '0x000000'
+      cursor: '0xafbfbf'
+
+    # Normal colors
+    normal:
+      black:   '0x263640'
+      red:     '0xd12f2c'
+      green:   '0x819400'
+      yellow:  '0xb08500'
+      blue:    '0x2587cc'
+      magenta: '0x696ebf'
+      cyan:    '0x289c93'
+      white:   '0xbfbaac'
+
+    # Bright colors
+    bright:
+      black:   '0x4a697d'
+      red:     '0xfa3935'
+      green:   '0xa4bd00'
+      yellow:  '0xd9a400'
+      blue:    '0x2ca2f5'
+      magenta: '0x8086e8'
+      cyan:    '0x33c5ba'
+      white:   '0xfdf6e3'
 # Colors 
-colors:
-  # Default colors
-  primary:
-    background: '0x141c21'
-    foreground: '0xa93a1a1'
-
-  # Cursor colors
-  cursor:
-    text: '0x000000'
-    cursor: '0xafbfbf'
-
-  # Normal colors
-  normal:
-    black:   '0x263640'
-    red:     '0xd12f2c'
-    green:   '0x819400'
-    yellow:  '0xb08500'
-    blue:    '0x2587cc'
-    magenta: '0x696ebf'
-    cyan:    '0x289c93'
-    white:   '0xbfbaac'
-
-  # Bright colors
-  bright:
-    black:   '0x4a697d'
-    red:     '0xfa3935'
-    green:   '0xa4bd00'
-    yellow:  '0xd9a400'
-    blue:    '0x2ca2f5'
-    magenta: '0x8086e8'
-    cyan:    '0x33c5ba'
-    white:   '0xfdf6e3'
+colors: *solarized
 
 # Background opacity
 background_opacity: 0.9
