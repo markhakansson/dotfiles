@@ -2,22 +2,30 @@ daemonize
 ignore-empty-password
 image=/home/mark/Pictures/wallhaven-4g66kl.jpg
 
-indicator-radius=100
-indicator-thickness=15
+indicator-radius=120
+indicator-thickness=20
 
 inside-color=ffffff1c
-ring-color=ffffff3e
-line-color=ffffff00
-key-hl-color=00000080
-ring-ver-color=00000000
-separator-color=22222260
-inside-ver-color=000f001c
-inside-clear-color=0000001c
-ring-wrong-color=00000055
-inside-wrong-color=0000001c
+inside-ver-color=fff0001c
+inside-clear-color=0000bb1c
+inside-wrong-color=cd16161c
 
-text-ver-color=000000ff
-text-wrong-color=ff0000ff
-text-clear-color=000000ff
+ring-color=ffffff3e
+ring-ver-color=b5af191c
+ring-clear-color=0000bfac
+ring-wrong-color=cd1616ff
+
+line-color=ffffff00
+line-ver-color=b5af19ff
+line-clear-color=000ab01c
+line-wrong-color=cd16161c
+
+key-hl-color=00000080
+
+separator-color=22222260
+
 text-color=000000ff
+text-ver-color=fffff100
+text-clear-color=fffff100
+text-wrong-color=ff000000
 
