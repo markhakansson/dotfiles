@@ -3,11 +3,9 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 22, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
-    // Modules configuration
+    "modules-left": ["sway/workspaces", "custom/spotify", "sway/mode"],
+    //"modules-center": ["sway/window"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "tray", "battery", "clock"], 
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -16,6 +14,7 @@
             "1": "",
             "2": "",
             "3": "",
+            "10": "",
             "urgent": "",
             "focused": "",
             "default": ""
@@ -107,12 +106,12 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume:3}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format": "{volume:3}% {icon}", 
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
+        //"format-source": "{volume}% ",
+        //"format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -123,18 +122,5 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
 }
-
