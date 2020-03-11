@@ -116,11 +116,10 @@ output * bg $bg fill
 #
 # Applications:
 #
-    # start spotify
-    bindsym $mod+m exec $spotify
-    
     bindsym $mod+F2 exec firefox
     bindsym $mod+F3 exec codium
+    bindsym $mod+F10 exec $spotify
+
 #
 # Function keys:
 #
@@ -185,8 +184,12 @@ output * bg $bg fill
 
     # Assign applications to workspaces
     assign [class="(?i)alacritty"] → 1 
-    assign [class="(?i)firefox"] → 2 
-    assign [class="(?i)vscodium"] → 3 
+    #assign [class="(?i)firefox"] → 2 
+    #assign [class="(?i)vscodium"] → 3 
+    for_window [class="(?i)alacritty"] focus
+    for_window [class="(?i)firefox"] move to workspace 2, focus
+    for_window [class="(?i)vscodium"] move to workspace 3, focus
+    for_window [class="Spotify"] move to workspace 10, focus
 #
 # Layout stuff:
 #
