@@ -191,9 +191,12 @@ output * bg $bg fill
     #assign [class="(?i)firefox"] → 2 
     #assign [class="(?i)vscodium"] → 3 
     for_window [class="(?i)alacritty"] focus
-    for_window [class="(?i)firefox"] move to workspace 2, focus
     for_window [class="(?i)vscodium"] move to workspace 3, focus
     for_window [class="Spotify"] move to workspace 10, focus
+    # Firefox
+    for_window [app_id="(?i)firefox"] move to workspace 2, focus
+    for_window [class="(?i)firefox-wayland"] move to workspace 2, focus
+    for_window [window_role="pop-up"] floating enable
 #
 # Layout stuff:
 #
