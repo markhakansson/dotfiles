@@ -3,7 +3,7 @@
     "window.menuBarVisibility": "toggle",
     "window.title": "${activeEditorShort}",
     "workbench.startupEditor": "newUntitledFile",
-    "rust-analyzer.serverPath": "rust-analyzer",
-    "terminal.integrated.shell.linux": "/usr/bin/fish",
-    "update.mode": "manual"
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "update.mode": "manual",
+    "editor.minimap.enabled": false"
 }
