@@ -1,3 +1,14 @@
+" Vim plugins (vim-plug)
+call plug#begin()
+
+Plug 'scrooloose/nerdtree'
+
+call plug#end()
+
+" Bindings
+map <C-n> :NERDTreeToggle<CR>
+
+" Vim settings
 syntax on
 
 set hidden
@@ -18,3 +29,4 @@ set expandtab
 set mouse=n
 
 set relativenumber
+
