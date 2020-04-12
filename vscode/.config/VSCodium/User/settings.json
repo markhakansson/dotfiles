@@ -5,5 +5,7 @@
     "workbench.startupEditor": "newUntitledFile",
     "terminal.integrated.shell.linux": "/bin/bash",
     "update.mode": "manual",
-    "editor.minimap.enabled": false"
+    "editor.minimap.enabled": false,
+    "rust-client.rustupPath": "/home/mark/.cargo/bin/rustup",
+    "rust-client.channel": "nightly"
 }
