@@ -14,8 +14,19 @@ and not set -q TMUX
     exec tmux
 end
 
+# Abbreviations
+abbr ls exa
+abbr l exa
+abbr la 'exa -a'
+abbr ll 'exa -l'
+abbr vim 'nvim'
+
+## Git
+abbr g 'git'
+abbr ga 'git add'
+abbr gcm 'git commit -m'
+
 # Aliases
 alias c='clear'
-alias l='ls'
-alias la='ls -a'
 alias search='fd'
+
