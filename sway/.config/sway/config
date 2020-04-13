@@ -12,7 +12,7 @@ default_border pixel 1
 # Hide cursor
 seat * hide_cursor 5000
 
-#gaps inner 8
+#gaps inner 6 
 
 ### Variables
 #
@@ -119,6 +119,11 @@ output * bg $bg fill
     bindsym $mod+F2 exec firefox-wayland
     bindsym $mod+F3 exec codium
     bindsym $mod+F10 exec $spotify
+    
+    # Screenshot
+    bindsym --release Print exec fish -c screenshot 
+    bindsym --release Shift+Print exec fish -c screenshot_slurp 
+
 
 #
 # Function keys:
@@ -264,6 +269,7 @@ bindsym $mod+r mode "resize"
 bar {
     swaybar_command waybar
 }
+
 
 # Make launcher float
 for_window [title="^launcher$"] floating enable, border pixel
