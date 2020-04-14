@@ -3,3 +3,4 @@ tmux-client-*
 .uuid
 .netrwhist
 fish/.config/fish/fish_variables
+nvim/.config/nvim/plugged
