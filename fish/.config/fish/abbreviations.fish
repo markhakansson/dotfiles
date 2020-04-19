@@ -8,7 +8,7 @@ abbr l exa
 abbr la 'exa -a'
 abbr ll 'exa -l'
 abbr vim 'nvim'
-abbr grep 'ripgrep'
+abbr grep 'rg'
 abbr du 'dust'
 abbr code 'codium'
 
@@ -16,6 +16,7 @@ abbr code 'codium'
 abbr c 'clear'
 abbr ... 'cd ../..'
 abbr fdh 'fd -H'
+abbr pg 'pgrep'
 
 ## Git
 abbr g 'git'
