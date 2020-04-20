@@ -104,7 +104,7 @@ output * bg $bg fill
     # lock sway
     bindsym $mod+Ctrl+l exec $lock
 
-    # hibernate computer
+   # hibernate computer
     bindsym $mod+Ctrl+h exec $lock && systemctl suspend
 
     # power off
@@ -131,6 +131,7 @@ output * bg $bg fill
     # Brightnesss control
     bindsym --locked XF86MonBrightnessDown exec light -U 5.00
     bindsym --locked XF86MonBrightnessUp exec light -A 5.00
+    bindsym --locked XF86ScreenSaver exec fish -c screensaver 
     # Volume
     bindsym --locked XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
     bindsym --locked XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
