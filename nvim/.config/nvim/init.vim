@@ -37,6 +37,9 @@ set mouse=n
 
 set relativenumber
 
+" Clipboard
+set clipboard+=unnamedplus
+
 filetype plugin indent on
 
 " Coc stuff
