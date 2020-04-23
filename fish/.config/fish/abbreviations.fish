@@ -18,6 +18,12 @@ abbr ... 'cd ../..'
 abbr fdh 'fd -H'
 abbr pg 'pgrep'
 
+# DNF
+abbr dnfi 'sudo dnf install'
+abbr dnfu 'sudo dnf update'
+abbr dnfuy 'sudo dnf update -y'
+abbr dnfs 'dnf search'
+
 ## Git
 abbr g 'git'
 abbr ga 'git add'
