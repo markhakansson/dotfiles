@@ -17,7 +17,9 @@ seat * hide_cursor 5000
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
+set $alt Mod1
 set $mod Mod4
+
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -84,7 +86,7 @@ output * bg $bg fill
 
     # kill focused window
     bindsym $mod+Shift+q kill
-
+    bindsym $alt+F4 kill
     # start your launcher
     bindsym $mod+d exec alacritty --dimensions 64 16 --title 'launcher' -e sh -c \'$launcher\'
 
