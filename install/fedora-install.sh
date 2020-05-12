@@ -10,7 +10,7 @@ sudo dnf update -y
 # Add GPG keys
 sudo rpm --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg 
 
-# Add repos
+# Add third-party repos
 sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm 
 printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg" |sudo tee -a /etc/yum.repos.d/vscodium.repo
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -45,12 +45,12 @@ tmux \
 vim \
 waybar \
 
-if [$XDG_CURRENT_DESKTOP == "GNOME"]; then
-	sudo dnf install -y \
-	gnome-tweaks \
-	gnome-shell-extension-unite \
-	gnome-shell-extension-no-topleft-hot-corner \
-fi
+#if [$XDG_CURRENT_DESKTOP == "GNOME"]; then
+#	sudo dnf install -y \
+#	gnome-tweaks \
+#	gnome-shell-extension-unite \
+#	gnome-shell-extension-no-topleft-hot-corner \
+#fi
 
 echo "# Changing default shell to fish"
 chsh -s `which fish` 
