@@ -1,0 +1,15 @@
+# Place this in /etc/systemd/system !
+[Unit]
+Description=Lock the screen when suspending
+Before=sleep.target
+
+[Service]
+User=mark
+Environment=WAYLAND_DISPLAY=wayland-0
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+Type=forking
+#ExecStart=/usr/bin/swaylock
+ExecStart=/bin/bash /usr/local/bin/lock.sh
+
+[Install]
+WantedBy=sleep.target
