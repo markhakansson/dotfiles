@@ -25,16 +25,22 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
-set $term alacritty 
-# Your preferred application launcher
-set $launcher dmenu_path | fzf | xargs swaymsg exec
-# Lock
-set $lock swaylock
-# Wallpaper/background
-set $bg ~/Pictures/Wallpapers/wallhaven-969w3d.jpg
-# Spotify
-set $spotify flatpak run com.spotify.Client
+
+#
+# Applications shortcuts
+#   
+    # Your preferred terminal emulator
+    set $term alacritty 
+    # Your preferred application launcher
+    set $launcher dmenu_path | fzf | xargs swaymsg exec
+    # Lock
+    set $lock swaylock 
+    # Wallpaper/background
+    set $bg ~/Pictures/Wallpapers/wallhaven-969w3d.jpg
+    # Spotify
+    set $spotify flatpak run com.spotify.Client
+    # Media pause
+    set $pausemedia fish -c pause_media
 
 ### Output configuration
 #
@@ -106,8 +112,8 @@ output * bg $bg fill
     # lock sway
     bindsym $mod+Ctrl+l exec $lock
 
-   # hibernate computer
-    bindsym $mod+Ctrl+h exec $lock && systemctl suspend
+    # hibernate computer
+    bindsym $mod+Ctrl+h exec $pausemedia && systemctl suspend 
 
     # power off
     bindsym $mod+Ctrl+p exec systemctl poweroff
