@@ -106,21 +106,29 @@ output * bg $bg fill
     # reload the configuration file
     bindsym $mod+Ctrl+c reload
 
-    # exit sway (logs you out of your wayland session)
-    bindsym $mod+Ctrl+e exit
-
     # lock sway
     bindsym $mod+Ctrl+l exec $lock
 
-    # hibernate computer
-    bindsym $mod+Ctrl+h exec $pausemedia && systemctl suspend 
-
     # power off
-    bindsym $mod+Ctrl+p exec systemctl poweroff
+    set $powermode Ctrl + Mod + (p)ower off, (r)eboot, (e)xit, (h)ibernate
+    mode "$powermode" {
+        # power off
+        bindsym $mod+Ctrl+p exec systemctl poweroff, 
+        
+        # reboot
+        bindsym $mod+Ctrl+r exec systemctl reboot
+        
+        # exit sway (logs you out of your wayland session)
+        bindsym $mod+Ctrl+e exit
     
-    # reboot
-    bindsym $mod+Ctrl+r exec systemctl reboot
+        # hibernate computer
+        bindsym $mod+Ctrl+h exec $pausemedia && systemctl suspend 
 
+        bindsym Escape mode "default"
+        bindsym Return mode "default" 
+    }
+    bindsym $mod+p mode "$powermode"
+    
 #
 # Applications:
 #
