@@ -11,5 +11,14 @@ $ cd dotfiles
 $ stow nvim
 ```
 
+# Fonts
+After stowing the fonts, update the font cache with
+```
+$ fc-cache -v
+```
+
+# System files
+Files in **/system-scripts/bin/** are to be placed in **/usr/local/bin/**, wheras all systemd files in **/system-scripts/systemd/** should be placed in **/etc/systemd/system/**.
+
 # Credits
 - [inactive-windows-transparency](https://github.com/swaywm/sway/blob/master/contrib/inactive-windows-transparency.py) by Hi-Angel
