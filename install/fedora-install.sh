@@ -34,6 +34,7 @@ fzf \
 git \
 keepassxc \
 neovim \
+NetworkManager-tui \
 ripgrep \
 rxvt-unicode \
 stow \
@@ -42,7 +43,6 @@ swaylock \
 swayidle \
 syncthing \
 tmux \
-vim \
 waybar \
 
 #if [$XDG_CURRENT_DESKTOP == "GNOME"]; then
