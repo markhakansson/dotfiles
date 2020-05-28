@@ -1,0 +1,7 @@
+### Highlighting
+#
+# Line numbering
+add-highlighter global/ number-lines -relative -hlcursor
+add-highlighter global/ wrap
+
+add-highlighter global/ show-matching
