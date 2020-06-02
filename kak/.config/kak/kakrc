@@ -5,3 +5,21 @@ add-highlighter global/ number-lines -relative -hlcursor
 add-highlighter global/ wrap
 
 add-highlighter global/ show-matching
+
+## Clipboard
+#
+# Define hook
+hook global NormalKey y|d|c %{ nop %sh{
+  printf %s "$kak_main_reg_dquote" | wl-copy > /dev/null 2>&1 &
+}}
+
+# Paste before 
+map global user P '!wl-paste -n<ret>'
+
+# Paste after
+map global user p '<a-!>wl-paste -n<ret>'
+
+### Color scheme
+#
+#colorscheme solarized-dark
+# todo fix line number color
