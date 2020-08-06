@@ -8,8 +8,7 @@ User=mark
 Environment=WAYLAND_DISPLAY=wayland-0
 Environment=XDG_RUNTIME_DIR=/run/user/1000
 Type=forking
-#ExecStart=/usr/bin/swaylock
-ExecStart=/bin/bash /usr/local/bin/lock.sh
+ExecStart=/usr/bin/swaylock
 
 [Install]
 WantedBy=sleep.target
