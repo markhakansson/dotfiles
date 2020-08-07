@@ -4,3 +4,5 @@ tmux-client-*
 .netrwhist
 fish/.config/fish/fish_variables
 nvim/.config/nvim/plugged
+vscode/.config/VSCodium/
+!vscode/.config/VSCodium/User/settings.json
