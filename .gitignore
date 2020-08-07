@@ -6,3 +6,4 @@ fish/.config/fish/fish_variables
 nvim/.config/nvim/plugged
 vscode/.config/VSCodium/
 !vscode/.config/VSCodium/User/settings.json
+systemd/.config/systemd/user/default.target.wants/
