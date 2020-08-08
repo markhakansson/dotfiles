@@ -38,7 +38,7 @@ set $right l
     # Wallpaper/background
     set $bg ~/Pictures/Wallpapers/wallhaven-969w3d.jpg
     # Spotify
-    set $spotify flatpak run com.spotify.Client
+    set $spotify spotify 
     # Media pause
     set $pausemedia fish -c pause_media
 
@@ -209,14 +209,20 @@ output * bg $bg fill
     bindsym $mod+Shift+Tab workspace prev
 
     # Assign applications to workspaces
-    assign [class="(?i)alacritty"] → 1 
-    for_window [class="(?i)alacritty"] focus
     for_window [class="(?i)vscodium"] move to workspace number 3, focus
     for_window [class="Spotify"] move to workspace number 10, focus
     # Firefox
     for_window [app_id="(?i)firefox"] move to workspace number 2, focus
-    for_window [class="(?i)firefox-wayland"] move to workspace number 2, focus
+    for_window [app_id="(?i)firefox-wayland"] move to workspace number 2, focus
+
+#
+# Floating windows
+#
+    # Firefox pop ups
     for_window [window_role="pop-up"] floating enable
+    # KeePassXC
+    for_window [class="(?i)keepassxc"] floating enable
+
 #
 # Layout stuff:
 #
