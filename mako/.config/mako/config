@@ -3,5 +3,5 @@ background-color=#275577FF
 border-color=#679597FF
 
 # Other settings
-default-timeout=15000
+default-timeout=10000
 font=source-code-pro 10
