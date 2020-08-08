@@ -24,6 +24,12 @@ abbr dnfu 'sudo dnf update'
 abbr dnfuy 'sudo dnf update -y'
 abbr dnfs 'dnf search'
 
+# Aura
+abbr a 'sudo aura'
+abbr as 'sudo aura -S'
+abbr aa 'sudo aura -A'
+abbr asyu 'sudo aura -Syu'
+
 ## Git
 abbr g 'git'
 abbr ga 'git add'
