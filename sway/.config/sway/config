@@ -132,7 +132,7 @@ output * bg $bg fill
 #
 # Applications:
 #
-    bindsym $mod+F2 exec firefox-wayland
+    bindsym $mod+F2 exec firefox
     bindsym $mod+F3 exec codium
     bindsym $mod+F10 exec $spotify
     
