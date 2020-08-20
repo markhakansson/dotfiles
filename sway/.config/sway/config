@@ -221,7 +221,7 @@ output * bg $bg fill
     # Firefox pop ups
     for_window [window_role="pop-up"] floating enable
     # KeePassXC
-    for_window [class="(?i)keepassxc"] floating enable
+    for_window [class="KeePassXC"] floating enable
 
 #
 # Layout stuff:
