@@ -7,5 +7,10 @@
     "update.mode": "manual",
     "editor.minimap.enabled": false,
     "rust-client.rustupPath": "/home/mark/.cargo/bin/rustup",
-    "rust-client.channel": "nightly"
+    "rust-client.channel": "nightly",
+    "vscode-neovim.neovimPath": "/usr/bin/nvim",
+    "vscode-neovim.neovimInitPath": "/home/mark/.config/nvim/init.vim",
+    "cSpell.userWords": [
+        "Kubernetes"
+    ]
 }
