@@ -299,9 +299,12 @@ for_window [title="^launcher$"] floating enable, border pixel
 
 # Things to run when WM starts
 exec "systemctl --user import-environment; systemctl --user start sway-session.target"
-exec systemctl import-environment SWAYSOCK
+#exec systemctl import-environment SWAYSOCK
+#exec sleep 5; exec systemd-cat --identifier=sway
 exec mako
-exec sleep 1; exec python $HOME/bin/inactive-windows-transparency.py
+exec sleep 5; exec "nm-applet --indicator" 
+
+#exec sleep 1; exec python $HOME/bin/inactive-windows-transparency.py
 #exec python $HOME/bin/autoname-workspaces.py 
 #exec python $HOME/bin/wsdnames.py
 
