@@ -44,6 +44,7 @@ swayidle \
 syncthing \
 tmux \
 waybar \
+wl-clipboard \
 
 #if [$XDG_CURRENT_DESKTOP == "GNOME"]; then
 #	sudo dnf install -y \
