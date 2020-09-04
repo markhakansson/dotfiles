@@ -5,7 +5,7 @@
     // "width": 1280, // Waybar width
     "modules-left": ["sway/workspaces", "sway/mode"],
     //"modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "tray", "battery", "clock"], 
+    "modules-right": ["pulseaudio", "cpu", "memory", "temperature", "backlight", "tray", "battery", "clock"], 
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
