@@ -4,7 +4,7 @@ tmux-client-*
 .netrwhist
 fish/.config/fish/fish_variables
 nvim/.config/nvim/plugged
-vscode/.config/VSCodium/
 !vscode/.config/VSCodium/User/settings.json
+vscode/.config/VSCodium/
 systemd/.config/systemd/user/default.target.wants/
 *.out
