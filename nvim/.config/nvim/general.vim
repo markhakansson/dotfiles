@@ -1,5 +1,6 @@
 " General nvim settings
 syntax on
+filetype plugin indent on
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -23,6 +24,4 @@ set relativenumber
 
 " Clipboard
 set clipboard+=unnamedplus
-
-filetype plugin indent on
 
