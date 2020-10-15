@@ -29,6 +29,7 @@ abbr a 'sudo aura'
 abbr as 'sudo aura -S'
 abbr aa 'sudo aura -A'
 abbr asyu 'sudo aura -Syu'
+abbr aau 'sudo aura -Au'
 
 ## Git
 abbr g 'git'
