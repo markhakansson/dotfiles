@@ -8,7 +8,6 @@
 #
 # Hide borders
 default_border pixel 1 
-
 # Hide cursor
 seat * hide_cursor 5000
 
@@ -19,7 +18,6 @@ seat * hide_cursor 5000
 # Logo key. Use Mod1 for Alt.
 set $alt Mod1
 set $mod Mod4
-
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -27,7 +25,7 @@ set $up k
 set $right l
 
 #
-# Applications shortcuts
+## Applications shortcuts
 #   
     # Your preferred terminal emulator
     set $term alacritty 
@@ -46,26 +44,8 @@ set $right l
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg $bg fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 #
 ## Keyboard:
 #
@@ -81,7 +61,6 @@ output * bg $bg fill
         accel_profile adaptive
         dwt enabled
     }
-
 
 ### Key bindings
 #
@@ -139,7 +118,7 @@ output * bg $bg fill
     # Screenshot
     bindsym --release Print exec fish -c screenshot 
     bindsym --release Shift+Print exec fish -c screenshot_slurp 
-
+    bindsym --release Shift+e+Print exec fish -c snap_and_edit
 
 #
 # Function keys:
@@ -222,7 +201,8 @@ output * bg $bg fill
     for_window [window_role="pop-up"] floating enable
     # KeePassXC
     for_window [class="KeePassXC"] floating enable
-
+    # Application launcher
+    for_window [title="^launcher$"] floating enable, border pixel
 #
 # Layout stuff:
 #
@@ -293,19 +273,12 @@ bar {
     swaybar_command waybar
 }
 
-
-# Make launcher float
-for_window [title="^launcher$"] floating enable, border pixel
-
 # Things to run when WM starts
 exec "systemctl --user import-environment; systemctl --user start sway-session.target"
-#exec systemctl import-environment SWAYSOCK
-#exec sleep 5; exec systemd-cat --identifier=sway
+
+# Startup applications
 exec mako
 exec sleep 5; exec "nm-applet --indicator" 
-
-#exec sleep 1; exec python $HOME/bin/inactive-windows-transparency.py
-#exec python $HOME/bin/autoname-workspaces.py 
-#exec python $HOME/bin/wsdnames.py
+exec sleep 5; exec keepassxc
 
 include /etc/sway/config.d/*
