@@ -31,9 +31,12 @@ abbr aa 'sudo aura -A'
 abbr asyu 'sudo aura -Syu'
 abbr aau 'sudo aura -Au'
 
-## Git
+# Git
 abbr g 'git'
 abbr ga 'git add'
 abbr gcm 'git commit -m'
 abbr gs 'git status'
 abbr gd 'git diff'
+
+# Cargo
+abbr cua 'cargo-install-update install-update -a'
