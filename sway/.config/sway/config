@@ -203,6 +203,8 @@ output * bg $bg fill
     for_window [class="KeePassXC"] floating enable
     # Application launcher
     for_window [title="^launcher$"] floating enable, border pixel
+    # nm applet
+    for_window [app_id="nm-connection-editor"] floating enable
 #
 # Layout stuff:
 #
@@ -276,9 +278,17 @@ bar {
 # Things to run when WM starts
 exec "systemctl --user import-environment; systemctl --user start sway-session.target"
 
-# Startup applications
+#
+## Startup applications
+#
 exec mako
 exec sleep 5; exec "nm-applet --indicator" 
 exec sleep 5; exec keepassxc
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Arc-Dark'
+}
 
 include /etc/sway/config.d/*
