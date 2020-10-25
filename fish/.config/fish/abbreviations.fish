@@ -40,3 +40,9 @@ abbr gd 'git diff'
 
 # Cargo
 abbr cua 'cargo-install-update install-update -a'
+
+# Systemctl
+abbr sse 'sudo systemctl enable'
+abbr sss 'sudo systemctl start'
+abbr ss 'systemctl status'
+
