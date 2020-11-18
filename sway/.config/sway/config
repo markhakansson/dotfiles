@@ -50,11 +50,14 @@ output * bg $bg fill
 ## Keyboard:
 #
     # set layout
-    input * xkb_layout "se"
+    input "type:keyboard" {
+        xkb_layout "se"
+        xkb_options caps:escape
+    }
 #
 ## Touchpad:
 #
-    input "2:18:FocalTechPS/2_FocalTech_Touchpad" {
+    input "type:touchpad" {
         natural_scroll enabled
         click_method clickfinger
         pointer_accel 0.1
