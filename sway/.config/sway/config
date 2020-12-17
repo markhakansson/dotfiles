@@ -11,7 +11,7 @@ default_border pixel 1
 # Hide cursor
 seat * hide_cursor 5000
 
-#gaps inner 6 
+gaps inner 6 
 
 ### Variables
 #
@@ -204,6 +204,7 @@ output * bg $bg fill
     for_window [window_role="pop-up"] floating enable
     # KeePassXC
     for_window [class="KeePassXC"] floating enable
+    for_window [app_id="org.keepassc.KeePassXC"] floating enable
     # Application launcher
     for_window [title="^launcher$"] floating enable, border pixel
     # nm applet
@@ -289,9 +290,9 @@ exec sleep 5; exec "nm-applet --indicator"
 exec sleep 5; exec keepassxc
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-set $gnome-schema org.gnome.desktop.interface
-exec_always {
-    gsettings set $gnome-schema gtk-theme 'Arc-Dark'
-}
+#set $gnome-schema org.gnome.desktop.interface
+#exec_always {
+#    gsettings set $gnome-schema gtk-theme 'Arc-Dark'
+#}
 
 include /etc/sway/config.d/*
