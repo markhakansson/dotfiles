@@ -1,0 +1,48 @@
+/**
+ * Selenized dark variant Wofi Color theme by jan-warchol
+ * With inspirations from mendelmaleh's Nord wofi theme
+ **/
+
+* {
+    border-radius: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    border: 0px;
+    font-size: 16px;
+    font-family: "Source Code Pro";
+    outline: none;
+    transition: none;
+    box-shadow: none;
+    text-shadow: none; 
+}
+
+window {
+    opacity: 0.95;
+    border: 2px;
+}
+
+#input {
+    padding: 4px;
+    background-color: #103c48;
+    color: #adbcbc;
+}
+#input > image {
+    color: rgba(0, 0, 0, 0); 
+}
+#input > .left {
+    margin-right: -16px; 
+}
+
+#scroll {
+    background-color: #103c48;
+    color: #adbcbc;
+}
+
+#entry {
+    padding: 4px;
+    background-color: #103c48;
+}
+#entry:selected {
+    background-color: #5E81AC; 
+}
