@@ -30,7 +30,7 @@ set $right l
     # Your preferred terminal emulator
     set $term alacritty 
     # Your preferred application launcher
-    set $launcher dmenu_path | fzf | xargs swaymsg exec
+    set $launcher wofi
     # Lock
     set $lock swaylock 
     # Wallpaper/background
@@ -76,7 +76,7 @@ output * bg $bg fill
     bindsym $mod+Shift+q kill
     bindsym $alt+F4 kill
     # start your launcher
-    bindsym $mod+d exec alacritty --dimensions 64 16 --title 'launcher' -e sh -c \'$launcher\'
+    bindsym $mod+d exec $launcher 
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
