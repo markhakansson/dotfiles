@@ -1,31 +1,30 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
+#############################
 ### Visual settings
-#
-# Hide borders
-default_border pixel 1 
-# Hide cursor
-seat * hide_cursor 5000
+#############################
+    # Hide cursor
+    seat * hide_cursor 5000
+    # Gaps
+    default_border pixel 5
+    gaps inner 6 
+    smart_gaps on
+    smart_borders no_gaps
 
-gaps inner 6 
-
+#############################
 ### Variables
+#############################
 #
-# Logo key. Use Mod1 for Alt.
-set $alt Mod1
-set $mod Mod4
-# Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
-
+## Keys
 #
-## Applications shortcuts
+    # Logo key. Use Mod1 for Alt.
+    set $alt Mod1
+    set $mod Mod4
+    # Home row direction keys, like vim
+    set $left h
+    set $down j
+    set $up k
+    set $right l
+#
+## Others 
 #   
     # Your preferred terminal emulator
     set $term alacritty 
@@ -35,17 +34,20 @@ set $right l
     set $lock swaylock 
     # Wallpaper/background
     set $bg ~/Pictures/Wallpapers/wallhaven-969w3d.jpg
-    # Spotify
-    set $spotify spotify 
-    # Media pause
+    # Media pause script
     set $pausemedia fish -c pause_media
 
+#############################
 ### Output configuration
+#############################
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+## Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+#
 output * bg $bg fill
 
+#############################
 ### Input configuration
+#############################
 #
 ## Keyboard:
 #
@@ -65,9 +67,11 @@ output * bg $bg fill
         dwt enabled
     }
 
+#############################
 ### Key bindings
+#############################
 #
-# Basics:
+## Basics:
 #
     # start a terminal
     bindsym $mod+Return exec $term
@@ -112,19 +116,19 @@ output * bg $bg fill
     bindsym $mod+p mode "$powermode"
     
 #
-# Applications:
+## Applications:
 #
     bindsym $mod+F2 exec firefox
     bindsym $mod+F3 exec codium
-    bindsym $mod+F10 exec $spotify
+    bindsym $mod+F10 exec spotify
     
-    # Screenshot
+    # Screenshot scripts
     bindsym --release Print exec fish -c screenshot 
     bindsym --release Shift+Print exec fish -c screenshot_slurp 
     bindsym --release Shift+e+Print exec fish -c snap_and_edit
 
 #
-# Function keys:
+## Function keys:
 #
     # Brightnesss control
     bindsym --locked XF86MonBrightnessDown exec light -U 5.00
@@ -135,7 +139,7 @@ output * bg $bg fill
     bindsym --locked XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
     bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 # 
-# Moving around:
+## Moving around:
 #
     # Move your focus around
     bindsym $mod+$left focus left
@@ -190,25 +194,6 @@ output * bg $bg fill
     bindsym $mod+Tab workspace next
     bindsym $mod+Shift+Tab workspace prev
 
-    # Assign applications to workspaces
-    for_window [class="(?i)vscodium"] move to workspace number 3, focus
-    for_window [class="Spotify"] move to workspace number 10, focus
-    # Firefox
-    for_window [app_id="(?i)firefox"] move to workspace number 2, focus
-    for_window [app_id="(?i)firefox-wayland"] move to workspace number 2, focus
-
-#
-# Floating windows
-#
-    # Firefox pop ups
-    for_window [window_role="pop-up"] floating enable
-    # KeePassXC
-    for_window [class="KeePassXC"] floating enable
-    for_window [app_id="org.keepassc.KeePassXC"] floating enable
-    # Application launcher
-    for_window [title="^launcher$"] floating enable, border pixel
-    # nm applet
-    for_window [app_id="nm-connection-editor"] floating enable
 #
 # Layout stuff:
 #
@@ -271,28 +256,45 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+
+#############################
+### Applications in Workspace 
+#############################
+    # Assign applications to workspaces
+    for_window [class="(?i)vscodium"] move to workspace number 3, focus
+    for_window [class="Spotify"] move to workspace number 10, focus
+    # Firefox
+    for_window [app_id="(?i)firefox"] move to workspace number 2, focus
+    for_window [app_id="(?i)firefox-wayland"] move to workspace number 2, focus
 #
-# Status Bar:
+# Floating windows
 #
+    # Firefox pop ups
+    for_window [window_role="pop-up"] floating enable
+    # KeePassXC
+    for_window [class="KeePassXC"] floating enable
+    for_window [app_id="org.keepassc.KeePassXC"] floating enable
+    # Application launcher
+    for_window [title="^launcher$"] floating enable, border pixel
+    # nm applet
+    for_window [app_id="nm-connection-editor"] floating enable
+
+#############################
+### Status Bar:
+#############################
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     swaybar_command waybar
 }
 
+#############################
+### Startup
+#############################
 # Things to run when WM starts
 exec "systemctl --user import-environment; systemctl --user start sway-session.target"
-
-#
-## Startup applications
-#
 exec mako
 exec sleep 5; exec "nm-applet --indicator" 
 exec sleep 5; exec keepassxc
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
-#set $gnome-schema org.gnome.desktop.interface
-#exec_always {
-#    gsettings set $gnome-schema gtk-theme 'Arc-Dark'
-#}
 
 include /etc/sway/config.d/*
