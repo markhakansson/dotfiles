@@ -1,5 +1,9 @@
 set selection-clipboard clipboard 
 
+# For TeX
+set synctex true
+set synctex-editor-command "code -g %{input}:%{line}"
+
 # zathurarc-dark
 set notification-error-bg       "#586e75" # base01  # seem not work
 set notification-error-fg       "#dc322f" # red
