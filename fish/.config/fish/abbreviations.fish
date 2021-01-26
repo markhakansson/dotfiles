@@ -12,6 +12,12 @@ abbr grep 'rg'
 abbr du 'dust'
 abbr code 'codium'
 
+## Interactive/Verbose
+abbr rm 'rm -i'
+abbr rmrf 'rm -rfi'
+abbr cp 'cp -i'
+abbr mv 'mv -i'
+
 ## Aliases 
 abbr c 'clear'
 abbr ... 'cd ../..'
