@@ -11,3 +11,6 @@ source $HOME/.config/nvim/general.vim
 
 " Coc
 source $HOME/.config/nvim/coc.vim
+
+" Neovide
+source $HOME/.config/nvim/neovide.vim

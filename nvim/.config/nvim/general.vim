@@ -1,6 +1,6 @@
 " General nvim settings
-syntax on
 filetype plugin indent on
+syntax on
 
 " TextEdit might fail if hidden is not set.
 set hidden
