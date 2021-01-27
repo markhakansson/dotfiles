@@ -13,10 +13,10 @@ abbr du 'dust'
 abbr code 'codium'
 
 ## Interactive/Verbose
-abbr rm 'rm -i'
+abbr rm 'rm -v'
 abbr rmrf 'rm -rfi'
-abbr cp 'cp -i'
-abbr mv 'mv -i'
+abbr cp 'cp -v'
+abbr mv 'mv -v'
 
 ## Aliases 
 abbr c 'clear'
