@@ -1,5 +1,5 @@
 # dotfiles
-:palm_tree: sway, :fish: fish, :white_square_button: Alacritty, :abcd: tmux, :tophat: Fedora. My personal dotfiles, :100:% Wayland compatible.
+:palm_tree: sway, :fish: fish, :white_square_button: Alacritty, :abcd: tmux, :a: Arch Linux. My personal dotfiles, :100:% Wayland compatible.
 
 # Screenshot
 ![Terminal workspace](https://raw.githubusercontent.com/markhakansson/dotfiles/master/.screenshots/terminal.png)
