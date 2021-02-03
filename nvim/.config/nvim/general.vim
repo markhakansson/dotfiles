@@ -25,3 +25,6 @@ set relativenumber
 " Clipboard
 set clipboard+=unnamedplus
 
+" Theme
+colorscheme onedark
+hi Normal guibg=NONE ctermbg=NONE
