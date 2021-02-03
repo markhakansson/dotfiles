@@ -14,7 +14,7 @@ abbr code 'codium'
 
 ## Interactive/Verbose
 abbr rm 'rm -v'
-abbr rmrf 'rm -rfi'
+abbr rmrf 'rm -rfI'
 abbr cp 'cp -v'
 abbr mv 'mv -v'
 
