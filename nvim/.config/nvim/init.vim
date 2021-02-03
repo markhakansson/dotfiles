@@ -14,3 +14,7 @@ source $HOME/.config/nvim/coc.vim
 
 " Neovide
 source $HOME/.config/nvim/neovide.vim
+
+" Load language specific settings
+source $HOME/.config/nvim/language/rust.vim
+
