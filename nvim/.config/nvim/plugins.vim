@@ -9,6 +9,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'dag/vim-fish'
 Plug 'cespare/vim-toml'
 Plug 'rust-lang/rust.vim'
+Plug 'rhysd/vim-llvm'
 
 " Coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
