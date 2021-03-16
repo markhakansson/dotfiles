@@ -2,11 +2,13 @@
 # Abbreviations
 #
 
+set -l exa 'exa --group-directories-first'
+
 ## Program replacements
-abbr ls exa
-abbr l exa
-abbr la 'exa -a'
-abbr ll 'exa -l'
+abbr ls 'exa --group-directories-first'
+abbr l 'exa --group-directories-first'
+abbr la 'exa --group-directories-first -a'
+abbr ll 'exa --group-directories-first -l'
 abbr vim 'nvim'
 abbr grep 'rg'
 abbr du 'dust'
