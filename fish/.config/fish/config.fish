@@ -8,7 +8,7 @@ fish_vi_key_bindings
 # Start tmux
 if status is-interactive
 and not set -q TMUX
-    exec tmux
+    exec tmux new -As0
 end
 
 # Abbreviations
