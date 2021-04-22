@@ -23,6 +23,7 @@ abbr mv 'mv -v'
 ## Aliases 
 abbr c 'clear'
 abbr ... 'cd ../..'
+abbr .... 'cd ../../..'
 abbr fdh 'fd -H'
 abbr pg 'pgrep'
 
