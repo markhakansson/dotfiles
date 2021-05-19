@@ -15,3 +15,6 @@ end
 
 # Abbreviations
 source "$HOME/.config/fish/abbreviations.fish"
+
+# Init zoxide 
+zoxide init fish | source
