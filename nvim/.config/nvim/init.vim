@@ -10,7 +10,9 @@ source $HOME/.config/nvim/bindings.vim
 source $HOME/.config/nvim/general.vim
 
 " Coc
-source $HOME/.config/nvim/coc.vim
+if exists('g:coc')
+    source $HOME/.config/nvim/coc.vim
+endif
 
 " Load language specific settings
 source $HOME/.config/nvim/language/rust.vim
@@ -19,3 +21,6 @@ source $HOME/.config/nvim/language/rust.vim
 if exists('g:neovide')
     source $HOME/.config/nvim/neovide.vim 
 endif
+
+source $HOME/.config/nvim/plugins/init.vim
+
