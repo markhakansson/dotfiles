@@ -1,12 +1,16 @@
 {
-  "latex.build.args": [
-      "-pdf",
-      "-interaction=nonstopmode",
-      "-synctex=1",
-      "-outdir=out" 
+  "json.enable": true,
+  "texlab.build.executable": "latexmk",
+  "texlab.build.args": [
+    "-pdf",
+    "-interaction=nonstopmode",
+    "-synctex=1",
+    "%f"
   ],
-  "latex.build.onSave": true,
-  "latex.build.outputDirectory": "out",
-  "latex.forwardSearch.executable": "zathura",
-  "latex.forwardSearch.args": ["--synctex-forward", "%l:1:%f", "%p"]   
+  "texlab.build.isContinuous": true,
+  "texlab.build.onSave": true,
+  "texlab.build.forwardSearchAfter": true,
+  "texlab.auxDirectory": "out",
+  "texlab.forwardSearch.executable": "zathura",
+  "texlab.forwardSearch.args": ["--synctex-forward", "%l:1:%f", "%p"]   
 }

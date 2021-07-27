@@ -5,6 +5,9 @@ syntax on
 " TextEdit might fail if hidden is not set.
 set hidden
 
+" spellcheck languages
+set spelllang=en
+
 set wildmenu
 
 set hlsearch
