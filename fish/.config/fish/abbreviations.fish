@@ -5,8 +5,10 @@
 ## Program replacements
 ##
 ### ls
-abbr ls 'exa --group-directories-first'
 abbr l 'exa --group-directories-first'
+abbr ls 'exa --group-directories-first'
+abbr lt 'exa --group-directories-first -TL=3'
+abbr lst 'exa --group-directories-first -TL=3'
 abbr la 'exa --group-directories-first -a'
 abbr lat 'exa --group-directories-first -aTL=3'
 abbr ll 'exa --group-directories-first -l'
