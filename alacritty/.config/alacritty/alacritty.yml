@@ -15,19 +15,19 @@ window:
 # Font configuration
 font:
   normal:
-    family: Source Code Pro
+    family: SauceCodePro Nerd Font
     style: Regular
 
   bold:
-    family: Source Code Pro
+    family: SauceCodePro Nerd Font
     style: Bold
 
   italic:
-    family: Source Code Pro
+    family: SauceCodePro Nerd Font
     style: Italic
 
   bold_italic:
-    family: Source Code Pro
+    family: SauceCodePro Nerd Font
     style: Bold Italic
 
   # Point size
@@ -135,6 +135,6 @@ key_bindings:
   #- { key: X,     mods: Shift|Alt,     chars: "\x02\x78\x79" }  # tmux: Force close pane
   #- { key: Up,    mods: Control,           action: ScrollLineUp } 
   #- { key: Down,  mods: Control,           action: ScrollLineDown }
-  #- { key: Up,    mods: Shift|Alt,   action: ScrollPageUp }
-  #- { key: Down,  mods: Shift|Alt,   action: ScrollPageDown }
+  - { key: PageUp,   action: ScrollPageUp }
+  - { key: PageDown, action: ScrollPageDown }
   #- { key: F11,   action: ToggleFullscreen }
