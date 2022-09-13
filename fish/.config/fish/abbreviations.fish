@@ -55,9 +55,14 @@ abbr aau 'sudo aura -Au'
 #
 abbr g 'git'
 abbr ga 'git add'
+abbr gc 'git commit'
 abbr gcm 'git commit -m'
 abbr gs 'git status'
 abbr gd 'git diff'
+abbr gl 'git log'
+
+## Branchless
+abbr gsl 'git sl'
 
 ## Cargo
 #
