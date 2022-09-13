@@ -1,6 +1,6 @@
 daemonize
 ignore-empty-password
-image=/home/mark/Pictures/Wallpapers/wallhaven-4g66kl.jpg
+image=/home/mark/Pictures/Wallpapers/lock-screen-wallpaper
 
 indicator-radius=120
 indicator-thickness=20
@@ -28,4 +28,3 @@ text-color=000000ff
 text-ver-color=fffff100
 text-clear-color=fffff100
 text-wrong-color=ff000000
-
