@@ -35,17 +35,25 @@
     # Lock
     set $lock swaylock 
     # Wallpaper/background
-    set $bg ~/Pictures/Wallpapers/wallhaven-969w3d.jpg
+    set $bg ~/Pictures/Wallpapers/default-wallpaper
     # Media pause script
     set $pausemedia fish -c pause_media
+
+#
+## Work related
+#
+    set $ms_teams_ws 9
+    set $ms_teams_app chromium
 
 #############################
 ### Output configuration
 #############################
-#
+set $OUT_BUILTIN eDP-1
+set $OUT_EXTERNAL DP-2
+
 ## Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#
 output * bg $bg fill
+workspace $ms_teams_ws output $OUT_BUILTIN
 
 #############################
 ### Input configuration
@@ -137,8 +145,8 @@ output * bg $bg fill
     bindsym --locked XF86MonBrightnessUp exec light -A 5.00
     bindsym --locked XF86ScreenSaver exec fish -c screensaver 
     # Volume
-    bindsym --locked XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
-    bindsym --locked XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 # 
 ## Moving around:
@@ -265,6 +273,8 @@ bindsym $mod+r mode "resize"
     # Assign applications to workspaces
     for_window [class="(?i)vscodium"] move to workspace number 3, focus
     for_window [class="Spotify"] move to workspace number 10, focus
+    # Work related
+    for_window [class="Chromium"] move to workspace number $ms_teams_ws, focus
     # Firefox
     for_window [app_id="(?i)firefox"] move to workspace number 2, focus
     for_window [app_id="(?i)firefox-wayland"] move to workspace number 2, focus
