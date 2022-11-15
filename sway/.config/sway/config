@@ -50,10 +50,36 @@
 #############################
 set $OUT_BUILTIN eDP-1
 set $OUT_EXTERNAL DP-2
+set $OUT_EXTERNAL_SMALL HDMI-A-1
 
 ## Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg $bg fill
+
+#
+## Workspace allocation:
+#
 workspace $ms_teams_ws output $OUT_BUILTIN
+workspace 8 output $OUT_EXTERNAL_SMALL
+workspace 1 output $OUT_EXTERNAL
+
+#
+## Monitor configuration:
+#
+output $OUT_BUILTIN {
+    pos 0 0
+    res 1920x1080
+}
+
+output $OUT_EXTERNAL {
+    pos 1920 0
+    res 3840x2160
+}
+
+output $OUT_EXTERNAL_SMALL {
+    transform 90
+    pos 5760 0
+    res 1920x1080
+}
 
 #############################
 ### Input configuration
