@@ -10,9 +10,9 @@ source $HOME/.config/nvim/bindings.vim
 source $HOME/.config/nvim/general.vim
 
 " Coc
-if exists('g:coc')
-    source $HOME/.config/nvim/coc.vim
-endif
+"if exists('g:coc')
+source $HOME/.config/nvim/coc.vim
+"endif
 
 " Load language specific settings
 source $HOME/.config/nvim/language/rust.vim

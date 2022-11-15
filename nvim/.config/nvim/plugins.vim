@@ -19,6 +19,7 @@ Plug 'dag/vim-fish'
 Plug 'cespare/vim-toml'
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-llvm'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 " Coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

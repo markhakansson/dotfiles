@@ -1,5 +1,8 @@
 {
+  "clangd.semanticHighlighting": true,
   "json.enable": true,
+  "yaml.enable": true,
+  "yaml.format.enable": true,
   "texlab.build.executable": "latexmk",
   "texlab.build.args": [
     "-pdf",
@@ -12,5 +15,6 @@
   "texlab.build.forwardSearchAfter": true,
   "texlab.auxDirectory": "out",
   "texlab.forwardSearch.executable": "zathura",
-  "texlab.forwardSearch.args": ["--synctex-forward", "%l:1:%f", "%p"]   
+  "texlab.forwardSearch.args": ["--synctex-forward", "%l:1:%f", "%p"],
+  "rust-analyzer.checkOnSave.allTargets": false
 }
