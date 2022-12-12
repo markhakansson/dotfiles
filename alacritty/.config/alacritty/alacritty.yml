@@ -35,7 +35,35 @@ font:
   size: 11.0
 
 schemes:
-  breeze: &breeze 
+  papertheme: &papertheme
+    # Default colors
+    primary:
+      background: '#F2EEDE'
+      foreground: '#000000'
+
+    # Normal colors
+    normal:
+      black:   '#000000'
+      red:     '#CC3E28'
+      green:   '#216609'
+      yellow:  '#B58900'
+      blue:    '#1E6FCC'
+      magenta: '#5C21A5'
+      cyan:    '#158C86'
+      white:   '#AAAAAA'
+
+    # Bright colors
+    bright:
+      black:   '#555555'
+      red:     '#CC3E28'
+      green:   '#216609'
+      yellow:  '#B58900'
+      blue:    '#1E6FCC'
+      magenta: '#5C21A5'
+      cyan:    '#158C86'
+      white:   '#AAAAAA'
+
+  breeze: &breeze
     primary:
       background: '0x141c21'
       foreground: '0xfcfcfc'
@@ -103,6 +131,63 @@ schemes:
       magenta: '0x8086e8'
       cyan:    '0x33c5ba'
       white:   '0xfdf6e3'
+
+  solarizedlight: &solarizedlight
+    # Default colors
+    primary:
+      background: '0xfdf6e3'
+      foreground: '0x586e75'
+
+    cursor:
+      text: '0x000000'
+      cursor: '0xafbfbf'
+
+    # Normal colors
+    normal:
+      black:   '0x073642'
+      red:     '0xdc322f'
+      green:   '0x859900'
+      yellow:  '0xb58900'
+      blue:    '0x268bd2'
+      magenta: '0xd33682'
+      cyan:    '0x2aa198'
+      white:   '0xeee8d5'
+
+    # Bright colors
+    bright:
+      black:   '0x002b36'
+      red:     '0xcb4b16'
+      green:   '0x586e75'
+      yellow:  '0x657b83'
+      blue:    '0x839496'
+      magenta: '0x6c71c4'
+      cyan:    '0x93a1a1'
+      white:   '0xfdf6e3'
+  onehalflight: &onehalflight
+    primary:
+      background: '0xfafafa'
+      foreground: '0x383a42'
+
+    normal:
+      black: '0x383a42'
+      red: '0xe45649'
+      green: '0x50a14f'
+      yellow: '0xc18401'
+      blue: '0x0184bc'
+      magenta: '0xa626a4'
+      cyan: '0x0997b3'
+      white: '0xfafafa'
+
+    bright:
+      black: '0x383a42'
+      red: '0xe45649'
+      green: '0x50a14f'
+      yellow: '0xc18401'
+      blue: '0x0184bc'
+      magenta: '0xa626a4'
+      cyan: '0x0997b3'
+      white: '0xfafafa'
+
 # Colors 
 colors: *solarized
 
@@ -131,7 +216,7 @@ key_bindings:
   #- { key: J,     mods: Shift|Alt,     chars: "\x02\x22" }  # tmux: Split horizontal
   #- { key: X,     mods: Alt,           chars: "\x02\x78" }  # tmux: Close pane
   #- { key: X,     mods: Shift|Alt,     chars: "\x02\x78\x79" }  # tmux: Force close pane
-  #- { key: Up,    mods: Control,           action: ScrollLineUp } 
+  #- { key: Up,    mods: Control,           action: ScrollLineUp }
   #- { key: Down,  mods: Control,           action: ScrollLineDown }
   - { key: PageUp,   action: ScrollPageUp }
   - { key: PageDown, action: ScrollPageDown }
