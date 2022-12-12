@@ -1,0 +1,8 @@
+[[language]]
+name = "rust"
+auto-format = true
+scope = "source.rust"
+injection-regex = "rust"
+file-types = ["rs"]
+roots = ["Cargo.toml", "Cargo.lock"]
+language-server = { command = "rust-analyzer" }
