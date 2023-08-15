@@ -16,5 +16,6 @@
   "texlab.auxDirectory": "out",
   "texlab.forwardSearch.executable": "zathura",
   "texlab.forwardSearch.args": ["--synctex-forward", "%l:1:%f", "%p"],
-  "rust-analyzer.checkOnSave.allTargets": false
+  "rust-analyzer.checkOnSave.allTargets": false,
+  "rust-analyzer.procMacro.enable": true
 }

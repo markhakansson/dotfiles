@@ -34,3 +34,4 @@ hi Normal guibg=NONE ctermbg=NONE
 
 " GUI
 set guifont=Source\ Code\ Pro\ 11
+
