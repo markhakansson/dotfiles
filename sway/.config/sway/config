@@ -82,6 +82,12 @@ output $OUT_EXTERNAL_SMALL {
 }
 
 #############################
+### Idle configuration
+#############################
+# Focus to main output, after being inactive for too long
+exec swayidle -w timeout 30 'swaymsg "focus output DP-2"'
+
+#############################
 ### Input configuration
 #############################
 #
@@ -328,6 +334,8 @@ bar {
 #############################
 ### Startup
 #############################
+#exec systemd-cat --identifier=sway sway
+
 # Things to run when WM starts
 exec "systemctl --user import-environment; systemctl --user start sway-session.target"
 exec mako
