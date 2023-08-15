@@ -1,8 +1,5 @@
 # Startup environment variables
-set fish_greeting # remove fish greeting
-set -Ux EDITOR nvim
-set -Ux PAGER "bat"
-set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
+source "$HOME/.config/fish/env.fish"
 
 # Start with vi bindings
 fish_vi_key_bindings
