@@ -1,0 +1,397 @@
+#############################
+### Visual settings
+#############################
+#
+## Cursor
+#
+	# Hide cursor after 5 seconds
+    seat * hide_cursor 5000
+
+#
+## Gaps
+#
+    default_border pixel 3
+    gaps inner 8
+	# Only add visual gaps when having more than one window in a workspace
+    smart_gaps on
+    smart_borders no_gaps
+
+# 
+## Color
+#
+	# Set focused workspace color
+    client.focused #800080 #760081 #ffffff
+
+
+#############################
+### Variables
+#############################
+#
+## Keys
+#
+    # Logo key. Use Mod1 for Alt.
+    set $ALT Mod1
+    set $MOD Mod4
+    # Home row direction keys, like vim
+    set $LEFT h
+    set $DOWN j
+    set $UP k
+    set $RIGHT l
+
+#
+## Others 
+#   
+    # Your preferred terminal emulator
+    set $TERM alacritty 
+    # Your preferred application launcher
+    set $LAUNCHER wofi
+    # Lock
+    set $LOCK swaylock 
+    # Wallpaper/background
+    set $BG ~/Pictures/Wallpapers/default-wallpaper
+    # Media pause script
+    set $PAUSE_MEDIA_SCRIPT fish -c pause_media
+
+#
+## Work related
+#
+    set $MS_TEAMS_WS 9
+    set $MS_TEAMS_APP chromium
+
+
+#############################
+### Output configuration
+#############################
+#
+## Monitor definitions
+#
+	set $OUT_BUILTIN eDP-1
+	set $OUT_EXTERNAL DP-2
+	set $OUT_EXTERNAL_SMALL HDMI-A-1
+
+#
+## Wallpaper
+#
+	output * bg $BG fill
+
+#
+## Workspace allocation:
+#
+	workspace $MS_TEAMS_WS output $OUT_BUILTIN
+	workspace 8 output $OUT_EXTERNAL_SMALL
+	workspace 1 output $OUT_EXTERNAL
+
+#
+## Monitor configuration:
+#
+	output $OUT_BUILTIN {
+    	pos 0 0
+    	res 1920x1080
+	}
+
+	output $OUT_EXTERNAL {
+    	pos 1920 0
+    	res 3840x2160
+	}
+
+	output $OUT_EXTERNAL_SMALL {
+    	transform 90
+    	pos 5760 0
+    	res 1920x1080
+	}
+
+#
+## Transform
+#
+	set $ROTATE_FOCUSED_OUTPUT_90_DEG fish -c sway
+    set $TRANSFORM_MODE (r)otate focused output
+    mode "$TRANSFORM_MODE" {
+		bindsym r exec fish -c "sway_transform_focused_output 90"
+
+        bindsym Escape mode "default"
+        bindsym Return mode "default" 
+    }
+    bindsym $MOD+o mode "$TRANSFORM_MODE"
+ 
+
+#############################
+### Idle configuration
+#############################
+#
+## AFK
+#
+	# Focus to main output, after being inactive for too long
+	exec swayidle -w timeout 30 'swaymsg "focus output DP-2"'
+
+
+#############################
+### Input configuration
+#############################
+#
+## Keyboard:
+#
+    # set layout
+    input "type:keyboard" {
+        xkb_layout "se"
+        xkb_options caps:escape
+    }
+
+#
+## Touchpad:
+#
+    input "type:touchpad" {
+        natural_scroll enabled
+        click_method clickfinger
+        pointer_accel 0.1
+        accel_profile adaptive
+        dwt enabled
+    }
+
+
+#############################
+### Key bindings
+#############################
+#
+## Basics:
+#
+    # start a terminal
+    bindsym $MOD+Return exec $TERM
+
+    # kill focused window
+    bindsym $MOD+Shift+q kill
+    bindsym $ALT+F4 kill
+    # start your launcher
+    bindsym $MOD+d exec $LAUNCHER
+
+    # Drag floating windows by holding down $MOD and left mouse button.
+    # Resize them with right mouse button + $MOD.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $MOD normal
+
+    # reload the configuration file
+    bindsym $MOD+Ctrl+c reload
+
+    # lock sway
+    bindsym $MOD+Ctrl+l exec $LOCK
+
+    # power off
+    set $POWER_MODE Ctrl + Mod + (p)ower off, (r)eboot, (e)xit, (h)ibernate
+    mode "$POWER_MODE" {
+        # power off
+        bindsym $MOD+Ctrl+p exec systemctl poweroff, 
+        
+        # reboot
+        bindsym $MOD+Ctrl+r exec systemctl reboot
+        
+        # exit sway (logs you out of your wayland session)
+        bindsym $MOD+Ctrl+e exit
+    
+        # hibernate computer
+        bindsym $MOD+Ctrl+h exec $PAUSE_MEDIA_SCRIPT && systemctl suspend 
+
+        bindsym Escape mode "default"
+        bindsym Return mode "default" 
+    }
+    bindsym $MOD+p mode "$POWER_MODE"
+    
+#
+## Applications:
+#
+    bindsym $MOD+F2 exec firefox
+    bindsym $MOD+F3 exec codium
+    bindsym $MOD+F10 exec spotify
+    
+    # Print screen
+	set $PRINT_MODE (n)ormal print, (s)elect and print, select and (e)dit
+	mode "$PRINT_MODE" {
+		bindsym --release n exec fish -c screenshot 
+	    bindsym --release s exec fish -c screenshot_slurp 
+    	bindsym --release e exec fish -c snap_and_edit
+
+		# return default mode
+    	bindsym Return mode "default"
+    	bindsym Escape mode "default"
+	}
+	bindsym Print mode "$PRINT_MODE"
+
+#
+## Function keys:
+#
+    # Brightnesss control
+    bindsym --locked XF86MonBrightnessDown exec light -U 5.00
+    bindsym --locked XF86MonBrightnessUp exec light -A 5.00
+    bindsym --locked XF86ScreenSaver exec fish -c screensaver 
+
+    # Volume
+    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+	bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# 
+## Moving around:
+#
+    # Move your focus around
+    bindsym $MOD+$LEFT focus left
+    bindsym $MOD+$DOWN focus down
+    bindsym $MOD+$UP focus up
+    bindsym $MOD+$RIGHT focus right
+
+    # _move_ the focused window with the same, but add Shift
+    bindsym $MOD+Shift+$LEFT move left
+    bindsym $MOD+Shift+$DOWN move down
+    bindsym $MOD+Shift+$UP move up
+    bindsym $MOD+Shift+$RIGHT move right
+
+#
+## Workspaces:
+#
+    # switch to workspace
+    bindsym $MOD+1 workspace number 1
+    bindsym $MOD+2 workspace number 2 
+    bindsym $MOD+3 workspace number 3
+    bindsym $MOD+4 workspace number 4
+    bindsym $MOD+5 workspace number 5
+    bindsym $MOD+6 workspace number 6
+    bindsym $MOD+7 workspace number 7
+    bindsym $MOD+8 workspace number 8
+    bindsym $MOD+9 workspace number 9
+    bindsym $MOD+0 workspace number 10
+    # move focused container to workspace
+    bindsym $MOD+Shift+1 move container to workspace number 1
+    bindsym $MOD+Shift+2 move container to workspace number 2 
+    bindsym $MOD+Shift+3 move container to workspace number 3
+    bindsym $MOD+Shift+4 move container to workspace number 4
+    bindsym $MOD+Shift+5 move container to workspace number 5
+    bindsym $MOD+Shift+6 move container to workspace number 6
+    bindsym $MOD+Shift+7 move container to workspace number 7
+    bindsym $MOD+Shift+8 move container to workspace number 8
+    bindsym $MOD+Shift+9 move container to workspace number 9
+    bindsym $MOD+Shift+0 move container to workspace number 10
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+
+    # Move between workspaces
+    bindsym $MOD+Tab workspace next
+    bindsym $MOD+Shift+Tab workspace prev
+
+#
+## Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $MOD+b or $MOD+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $MOD+b splith
+    bindsym $MOD+v splitv
+
+    # Switch the current container between different layout styles
+    bindsym $MOD+s layout stacking
+    bindsym $MOD+w layout tabbed
+    bindsym $MOD+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $MOD+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $MOD+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $MOD+space focus mode_toggle
+
+    # move focus to the parent container
+    bindsym $MOD+a focus parent
+
+#
+## Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $MOD+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $MOD+minus scratchpad show
+
+#
+## Resizing containers:
+#
+	set $RESIZE_MODE resize mode
+	mode "$RESIZE_MODE" {
+    	# left will shrink the containers width
+    	# right will grow the containers width
+    	# up will shrink the containers height
+    	# down will grow the containers height
+    	bindsym $LEFT resize shrink width 10 px or 10 ppt
+    	bindsym $DOWN resize grow height 10 px or 10 ppt
+    	bindsym $UP resize shrink height 10 px or 10 ppt
+    	bindsym $RIGHT resize grow width 10 px or 10 ppt
+
+    	# return to default mode
+    	bindsym Return mode "default"
+    	bindsym Escape mode "default"
+	}
+	bindsym $MOD+r mode "$RESIZE_MODE"
+
+
+#############################
+### Applications in Workspace 
+#############################
+#
+## Auto-assign to workspaces
+#
+    # Assign applications to workspaces
+    for_window [class="(?i)vscodium"] move to workspace number 3, focus
+    for_window [class="Spotify"] move to workspace number 10, focus
+    # Work related
+    for_window [class="Chromium"] move to workspace number $MS_TEAMS_WS, focus
+    # Firefox
+    for_window [app_id="(?i)firefox"] move to workspace number 2, focus
+    for_window [app_id="(?i)firefox-wayland"] move to workspace number 2, focus
+
+#
+## Floating windows
+#
+    # Firefox pop ups
+    for_window [window_role="pop-up"] floating enable
+    # KeePassXC
+    for_window [class="KeePassXC"] floating enable
+    for_window [app_id="org.keepassc.KeePassXC"] floating enable
+    # Application launcher
+    for_window [title="^launcher$"] floating enable, border pixel
+    # nm applet
+    for_window [app_id="nm-connection-editor"] floating enable
+
+
+#############################
+### Status Bar:
+#############################
+# Read `man 5 sway-bar` for more information about this section.
+	bar {
+    	swaybar_command waybar
+	}
+
+
+#############################
+### Startup
+#############################
+#
+## Systemd (not in use)
+#
+	# exec "systemctl --user import-environment; systemctl --user start sway-session.target"
+
+#
+## User applications
+#
+	exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+	exec mako
+	exec sleep 5; exec "nm-applet --indicator" 
+	exec sleep 5; exec keepassxc
+
+#
+## Include files
+#
+	include /etc/sway/config.d/*
