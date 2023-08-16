@@ -1,3 +1,9 @@
+#
+# About:
+# Common configuration shared between all systems.
+#
+
+
 #############################
 ### Visual settings
 #############################
@@ -52,54 +58,10 @@
     # Media pause script
     set $PAUSE_MEDIA_SCRIPT fish -c pause_media
 
-#
-## Work related
-#
-    set $MS_TEAMS_WS 9
-    set $MS_TEAMS_APP chromium
-
 
 #############################
 ### Output configuration
 #############################
-#
-## Monitor definitions
-#
-	set $OUT_BUILTIN eDP-1
-	set $OUT_EXTERNAL DP-2
-	set $OUT_EXTERNAL_SMALL HDMI-A-1
-
-#
-## Wallpaper
-#
-	output * bg $BG fill
-
-#
-## Workspace allocation:
-#
-	workspace $MS_TEAMS_WS output $OUT_BUILTIN
-	workspace 8 output $OUT_EXTERNAL_SMALL
-	workspace 1 output $OUT_EXTERNAL
-
-#
-## Monitor configuration:
-#
-	output $OUT_BUILTIN {
-    	pos 0 0
-    	res 1920x1080
-	}
-
-	output $OUT_EXTERNAL {
-    	pos 1920 0
-    	res 3840x2160
-	}
-
-	output $OUT_EXTERNAL_SMALL {
-    	transform 90
-    	pos 5760 0
-    	res 1920x1080
-	}
-
 #
 ## Transform
 #
@@ -346,8 +308,7 @@
     # Assign applications to workspaces
     for_window [class="(?i)vscodium"] move to workspace number 3, focus
     for_window [class="Spotify"] move to workspace number 10, focus
-    # Work related
-    for_window [class="Chromium"] move to workspace number $MS_TEAMS_WS, focus
+
     # Firefox
     for_window [app_id="(?i)firefox"] move to workspace number 2, focus
     for_window [app_id="(?i)firefox-wayland"] move to workspace number 2, focus
