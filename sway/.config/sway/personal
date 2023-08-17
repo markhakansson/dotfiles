@@ -1,0 +1,35 @@
+#
+# About:
+# Sway configuration for personal laptop.
+#
+
+include common
+
+
+#############################
+### Output configuration
+#############################
+#
+## Monitor definitions
+#
+	set $OUT_BUILTIN eDP-1
+	set $OUT_EXTERNAL_HDMI HDMI-A-2
+
+#
+## Wallpaper
+#
+	output * bg $BG fill
+
+#
+## Monitor configuration:
+#
+	output $OUT_BUILTIN {
+    	pos 0 0
+    	res 1920x1080
+	}
+
+	output $OUT_EXTERNAL_HDMI {
+		pos 1920 0
+		res 1920x1080
+	}
+

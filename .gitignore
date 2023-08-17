@@ -10,3 +10,4 @@ vscode/.config/VSCodium/
 systemd/.config/systemd/user/default.target.wants/
 *.out
 **.bak
+sway/.config/sway/config
