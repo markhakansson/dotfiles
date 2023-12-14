@@ -19,7 +19,6 @@ abbr cd 'z'
 abbr vim 'nvim'
 abbr grep 'rg'
 abbr du 'dust'
-abbr code 'codium'
 
 ## Interactive/Verbose
 #
@@ -35,7 +34,7 @@ abbr ... 'cd ../..'
 abbr .... 'cd ../../..'
 abbr fdh 'fd -H'
 abbr pg 'pgrep'
-abbr hx 'helix'
+# abbr hx 'helix'
 
 ## DNF
 #
@@ -61,6 +60,9 @@ abbr gcm 'git commit -m'
 abbr gs 'git status'
 abbr gd 'git diff'
 abbr gl 'git log'
+
+### Git extensions
+abbr gdf 'git dft'
 
 ## Branchless
 abbr gsl 'git sl'

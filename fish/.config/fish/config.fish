@@ -15,3 +15,7 @@ source "$HOME/.config/fish/abbreviations.fish"
 
 # Init zoxide 
 zoxide init fish | source
+
+# proto
+set -gx PROTO_HOME "$HOME/.proto"
+set -gx PATH "$PROTO_HOME/shims:$PROTO_HOME/bin" $PATH
