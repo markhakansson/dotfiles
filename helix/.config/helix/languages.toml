@@ -1,24 +1,28 @@
-[[language]]
-name = "rust"
-auto-format = true
-scope = "source.rust"
-injection-regex = "rust"
-file-types = ["rs"]
-roots = ["Cargo.toml", "Cargo.lock"]
-language-server = { command = "rustup", args = ["run", "stable", "rust-analyzer"] }
+# [[language]]
+# name = "rust"
+# auto-format = true
+# scope = "source.rust"
+# injection-regex = "rust"
+# file-types = ["rs"]
+# roots = ["Cargo.toml", "Cargo.lock"]
+# language-server = { command = "rustup", args = ["run", "stable", "rust-analyzer"] }
 
 # This config children follows the previous entry
-[language.config]
+[language-server.rust-analyzer.config]
 inlayHints.parameterHints = true
 
-[[language]]
-name = "python"
-scope = "source.python"
-injection-regex = "python"
-file-types = ["py","pyi","py3","pyw","ptl",".pythonstartup",".pythonrc","SConstruct"]
-shebangs = ["python"]
-roots = []
-comment-token = "#"
-language-server = { command = "pylsp" }
-# TODO: pyls needs utf-8 offsets
-indent = { tab-width = 4, unit = "    " }
+# [[language]]
+# name = "python"
+# scope = "source.python"
+# injection-regex = "python"
+# file-types = ["py","pyi","py3","pyw","ptl",".pythonstartup",".pythonrc","SConstruct"]
+# shebangs = ["python"]
+# roots = []
+# comment-token = "#"
+# language-server = { command = "pylsp" }
+# # TODO: pyls needs utf-8 offsets
+# indent = { tab-width = 4, unit = "    " }
+
+# [[language]]
+# name = "go"
+# auto-format = true
