@@ -347,9 +347,7 @@
 #
 ## User applications
 #
-	exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-	exec mako
-	#exec sleep 5; exec "nm-applet --indicator" 
+	exec /usr/bin/mako
 	exec sleep 5; exec keepassxc
 
 #
