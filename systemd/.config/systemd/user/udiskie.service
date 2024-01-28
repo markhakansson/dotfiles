@@ -3,7 +3,7 @@ Description=udiskie daemon
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/udiskie --appindicator --smart-tray
+ExecStart=/usr/bin/udiskie --no-automount --appindicator --smart-tray
 Restart=always
 
 [Install]
