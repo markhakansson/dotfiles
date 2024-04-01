@@ -22,26 +22,6 @@ family = "SauceCodePro Nerd Font"
 style = "Regular"
 
 [[keyboard.bindings]]
-chars = "\u0002\u001B[D"
-key = "H"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u0002\u001B[C"
-key = "L"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u0002\u001B[B"
-key = "J"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u0002\u001B[A"
-key = "K"
-mods = "Alt"
-
-[[keyboard.bindings]]
 action = "ScrollPageUp"
 key = "PageUp"
 

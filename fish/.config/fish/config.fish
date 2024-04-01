@@ -4,18 +4,26 @@ source "$HOME/.config/fish/env.fish"
 # Start with vi bindings
 fish_vi_key_bindings
 
-# Start tmux
 if status is-interactive
-and not set -q TMUX
-    exec tmux new -As0
+  # Start zellij
+  if not set -q ZELLIJ
+    # Auto-attach to latest session (if any)
+    if test "$ZELLIJ_AUTO_ATTACH" = "true"
+      set -l last_session (zellij list-sessions --short | head -n1)
+      zellij attach -c $last_session
+    else
+      zellij
+    end
+      
+    if test "$ZELLIJ_AUTO_EXIT" = "true"
+      kill $fish_pid
+    end
+  end
 end
 
 # Abbreviations
 source "$HOME/.config/fish/abbreviations.fish"
 
-# Init zoxide 
+# Init shell applications
 zoxide init fish | source
-
-# proto
-set -gx PROTO_HOME "$HOME/.proto"
-set -gx PATH "$PROTO_HOME/shims:$PROTO_HOME/bin" $PATH
+starship init fish | source
