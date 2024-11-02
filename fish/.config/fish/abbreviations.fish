@@ -34,7 +34,7 @@ abbr ... 'cd ../..'
 abbr .... 'cd ../../..'
 abbr fdh 'fd -H'
 abbr pg 'pgrep'
-# abbr hx 'helix'
+abbr hx 'helix'
 
 ## DNF
 #
