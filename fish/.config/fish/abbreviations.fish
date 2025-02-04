@@ -14,11 +14,11 @@ abbr lat 'exa --group-directories-first -aTL=3'
 abbr ll 'exa --group-directories-first -l'
 abbr llt 'exa --group-directories-first -lTL=3'
 ### Zoxide (short 'z')
-abbr cd 'z'
+abbr cd z
 ### Other
-abbr vim 'nvim'
-abbr grep 'rg'
-abbr du 'dust'
+abbr vim nvim
+abbr grep rg
+abbr du dust
 
 ## Interactive/Verbose
 #
@@ -29,12 +29,14 @@ abbr mv 'mv -v'
 
 ## Aliases 
 #
-abbr c 'clear'
+abbr c clear
 abbr ... 'cd ../..'
 abbr .... 'cd ../../..'
 abbr fdh 'fd -H'
-abbr pg 'pgrep'
-abbr hx 'helix'
+abbr pg pgrep
+# abbr hx 'helix'
+abbr pg pgrep
+# abbr hx 'helix'
 
 ## DNF
 #
@@ -53,7 +55,7 @@ abbr aau 'sudo aura -Au'
 
 ## Git
 #
-abbr g 'git'
+abbr g git
 abbr ga 'git add'
 abbr gc 'git commit'
 abbr gcm 'git commit -m'
@@ -76,3 +78,7 @@ abbr cua 'cargo-install-update install-update -a'
 abbr sse 'sudo systemctl enable'
 abbr sss 'sudo systemctl start'
 abbr ss 'systemctl status'
+
+## Helix
+#
+abbr fx 'fzfd hx'
