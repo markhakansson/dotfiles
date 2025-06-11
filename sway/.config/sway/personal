@@ -18,6 +18,7 @@ include common
 #
 ## Wallpaper
 #
+	set $BG ~/Pictures/Wallpapers/default-wallpaper
 	output * bg $BG fill
 
 #

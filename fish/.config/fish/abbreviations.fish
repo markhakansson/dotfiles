@@ -16,7 +16,6 @@ abbr llt 'exa --group-directories-first -lTL=3'
 ### Zoxide (short 'z')
 abbr cd z
 ### Other
-abbr vim nvim
 abbr grep rg
 abbr du dust
 
@@ -34,9 +33,6 @@ abbr ... 'cd ../..'
 abbr .... 'cd ../../..'
 abbr fdh 'fd -H'
 abbr pg pgrep
-# abbr hx 'helix'
-abbr pg pgrep
-# abbr hx 'helix'
 
 ## DNF
 #
