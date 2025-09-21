@@ -167,8 +167,8 @@ include /etc/sway/config.d/*
 ## Function keys:
 #
     # Brightnesss control
-    bindsym --locked XF86MonBrightnessDown exec light -U 5.00
-    bindsym --locked XF86MonBrightnessUp exec light -A 5.00
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set +5%
     bindsym --locked XF86ScreenSaver exec fish -c screensaver 
 
     # Volume
