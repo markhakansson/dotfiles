@@ -1,8 +1,6 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    //"height": 22, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right": ["tray", "pulseaudio", "cpu", "memory", "temperature", "backlight", "battery", "clock"], 
