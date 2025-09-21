@@ -50,7 +50,7 @@
     # Your preferred terminal emulator
     set $TERM foot
     # Your preferred application launcher
-    set $LAUNCHER wmenu-run
+    set $LAUNCHER wofi
     # Lock
     set $LOCK swaylock 
     # Media pause script
@@ -329,12 +329,8 @@
 ### Status Bar:
 #############################
 # Read `man 5 sway-bar` for more information about this section.
-	#bar {
-    	#swaybar_command waybar
-	#}
 	bar {
-		position top
-		
+    	swaybar_command waybar
 	}
 
 
@@ -349,10 +345,10 @@
 #
 ## User applications
 #
-#	exec /usr/bin/mako
-#	exec sleep 5; exec keepassxc
+	exec /usr/bin/mako
+	exec sleep 5; exec keepassxc
 
 #
 ## Include files
 #
-#	include /etc/sway/config.d/*
+	include /etc/sway/config.d/*
