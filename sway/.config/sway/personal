@@ -5,7 +5,6 @@
 
 include common
 
-
 #############################
 ### Output configuration
 #############################
@@ -33,3 +32,18 @@ include common
 		pos 1920 0
 		res 1920x1080
 	}
+
+#############################
+### Input configuration
+#############################
+#
+## Touchpad:
+#
+    input "type:touchpad" {
+        natural_scroll enabled
+        click_method clickfinger
+        pointer_accel 0.1
+        accel_profile adaptive
+        dwt enabled
+    }
+

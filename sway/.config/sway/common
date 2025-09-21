@@ -3,6 +3,7 @@
 # Common configuration shared between all systems.
 #
 
+include /etc/sway/config.d/*
 
 #############################
 ### Visual settings
@@ -96,18 +97,6 @@
         xkb_options caps:escape
     }
 
-#
-## Touchpad:
-#
-    input "type:touchpad" {
-        natural_scroll enabled
-        click_method clickfinger
-        pointer_accel 0.1
-        accel_profile adaptive
-        dwt enabled
-    }
-
-
 #############################
 ### Key bindings
 #############################
@@ -160,8 +149,6 @@
 ## Applications:
 #
     bindsym $MOD+F2 exec firefox
-    bindsym $MOD+F3 exec codium
-    bindsym $MOD+F10 exec spotify
     
     # Print screen
 	set $PRINT_MODE (n)ormal print, (s)elect and print, select and (e)dit
@@ -296,17 +283,12 @@
 	}
 	bindsym $MOD+r mode "$RESIZE_MODE"
 
-
 #############################
 ### Applications in Workspace 
 #############################
 #
 ## Auto-assign to workspaces
 #
-    # Assign applications to workspaces
-    for_window [class="(?i)vscodium"] move to workspace number 3, focus
-    for_window [class="Spotify"] move to workspace number 10, focus
-
     # Firefox
     for_window [app_id="(?i)firefox"] move to workspace number 2, focus
     for_window [app_id="(?i)firefox-wayland"] move to workspace number 2, focus
@@ -324,7 +306,6 @@
     # nm applet
     for_window [app_id="nm-connection-editor"] floating enable
 
-
 #############################
 ### Status Bar:
 #############################
@@ -333,22 +314,11 @@
     	swaybar_command waybar
 	}
 
-
 #############################
 ### Startup
 #############################
-#
-## Systemd (not in use)
-#
-	# exec "systemctl --user import-environment; systemctl --user start sway-session.target"
-
 #
 ## User applications
 #
 	exec /usr/bin/mako
 	exec sleep 5; exec keepassxc
-
-#
-## Include files
-#
-	include /etc/sway/config.d/*
